@@ -28,8 +28,16 @@ to follow for options)
 ii. Print daily sales report using today’s date and then select [Update] after
 the report generates (prompt after selecting to run the daily sales
 report).
-
+iii : Currency default from Customer file
+Add scripting to notify the user that the currency is different from the customer default and/or salesperson default is different from the order currency.  Add script to SO entry to pick up the current exchange rate from a Sage UDT (user defined table).  Something like AR_UDT_CurrencyExchange where the fields would be CurrencyCode, ExchangeRate, DateUpdated. ( UDF_CURRENCY,UDF_EXCHANGE_RATE,UDF_DATE_UPDATED)
+Add a “task” when salesperson currency is different then order currency for Spec, order and territory (this would include if the salesperson currency is empty.
 
 UDF Names : 
 Frieght Cost - UDF_FREIGHT_COSTS
 Billable - UDF_FREIGHT_BILLABLE
+
+UDT Name : AR_UDT_CurrencyExchange
+UDF Names : 
+CurrencyCode : UDF_CURRENCY
+ExchangeRate : UDF_EXCHANGE_RATE
+DateUpdated : UDF_DATE_UPDATED
