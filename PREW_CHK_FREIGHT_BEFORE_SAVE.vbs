@@ -1,4 +1,5 @@
 retval=0
+if oSession.CompanyCode = "TST" Then
 chargeFlag=""
 retval = oBusObj.GetValue("UDF_FREIGHT_BILLABLE$", chargeFlag)
 
@@ -24,3 +25,6 @@ End If
 if freightCost=0 Then
 	oScript.SetError("Freight Cost is mandatory")
 End If
+
+End If
+
