@@ -1,4 +1,5 @@
 retval = 0
+if oSession.CompanyCode = "TST" Then
 
 chargeFlag = ""
 retval = oBusObj.GetValue("UDF_FREIGHT_BILLABLE$", chargeFlag)
@@ -7,7 +8,7 @@ currencyCode = ""
 retval = oBusObj.GetValue("UDF_CURRENCY", currencyCode)
 
 exchangeRate = 0
-retval = oBusObj.GetValue("UDF_EXCHANGE_RATE", exchangeRate)
+retval = oBusObj.GetValue("UDF_CURR_EXCHANGE_RATE", exchangeRate)
 
 orderType = ""
 retVal = oBusObj.GetValue("OrderType$",orderType)
@@ -29,3 +30,4 @@ If UCase(Trim(currencyCode)) = "CAD" Then
 		oScript.SetError("If Currency is CAD, Exchange Rate must not be 1.000.")
 	End If
 End If
+end if
